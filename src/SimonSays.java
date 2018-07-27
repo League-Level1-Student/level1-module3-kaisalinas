@@ -45,21 +45,32 @@ public class SimonSays extends KeyAdapter {
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-
+		int points = 0;
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 		
 			// 17. Increase the value of score
+		if(e.getKeyCode() == imageIndex) {
+			if(simonSays) {
+			points+=1;}
+			speak("You are correct");
+		}
 		
 			// 18. Use the speak method to tell the user they were correct
 		
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't say..."
-		
+		else {
+			if(!simonSays) {
+			points+=1;}
+			speak("You are correct");
+		}
 			// 20.  Increase the value of score
+			
 		
+				
 			// 21. Use the speak method to tell the user they were correct
 		
 		// 22. Increment tries by 1
-		
+		points+=1;
 		// 25. If tries is greater than 9 (or however many you want)...
 		
 			// 26. Tell the user their score
@@ -67,8 +78,14 @@ public class SimonSays extends KeyAdapter {
 			// 27. Exit the program
 
 		// 23. Dispose of the frame
-
+		frame.dispose();
 		// 24. Call the showImage method to show a new image
+		
+	}
+
+	private void speak(int points) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void showImage() {
