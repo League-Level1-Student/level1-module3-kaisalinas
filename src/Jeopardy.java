@@ -64,11 +64,12 @@ public class Jeopardy implements ActionListener {
 		
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+		secondButton = createButton("dollarAmount");
 		// 10. Add the secondButton to the quizPanel
-
+		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+		firstButton.addActionListener(this);
+		secondButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 
 		frame.pack();
@@ -97,44 +98,59 @@ public class Jeopardy implements ActionListener {
 		buttonCount++;
 		// Return your new button instead of the temporary button
 		
-		return new JButton("temporary button");
+		return button;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
 		// Remove this temporary message:
-		JOptionPane.showMessageDialog(null, "pressed " + ((JButton) arg0.getSource()).getText() + " button");
+		//JOptionPane.showMessageDialog(null, "pressed " + ((JButton) arg0.getSource()).getText() + " button");
 
 		// Use the method that plays the jeopardy theme music.
-
+		playJeopardyTheme();
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
-
-		// Call the askQuestion() method
+		if(buttonPressed == firstButton) {
+			askQuestion("How heavy is the largest pizza on earth in pounds", "26883 pounds", 100);
+		}
+		
+		//Call the askQuestion() method
 
 		// Fill in the askQuestion() method. When you play the game, the score should
 		// change.
 
 		// Or if the buttonPressed was the secondButton
-
+		if(buttonPressed == secondButton) {
+			askQuestion("How many feet is the longest pizza in the world", "6330 feet", 200);
+		}
+		
 		// Call the askQuestion() method with a harder question
 
 		// Clear the button text (set the button text to nothing)
-
+		buttonPressed.setText("");
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
 		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		
 		// Use a pop up to ask the user the question
-
+		String bob = JOptionPane.showInputDialog(question);
 		// If the answer is correct
-
+		if(bob.equals(correctAnswer)) {
+			score += prizeMoney;
+			updateScore();
+			JOptionPane.showMessageDialog(null, "You are correct");
+		}
+		else {
+			score-= prizeMoney;
+			JOptionPane.showMessageDialog(null, "The correct answer is 26883 pounds");
+		}
 		// Increase the score by the prizeMoney
-
+		
 		// Call the updateScore() method
-
+		
 		// Pop up a message to tell the user they were correct
-
+		
 		// Otherwise
 
 		// Decrement the score by the prizeMoney
