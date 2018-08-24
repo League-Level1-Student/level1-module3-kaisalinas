@@ -151,6 +151,7 @@ public class Jeopardy implements ActionListener {
 			score -= prizeMoney;
 			JOptionPane.showMessageDialog(null, correctAnswer);
 		}
+		updateScore();
 		// Otherwise
 
 		// Decrement the score by the prizeMoney
