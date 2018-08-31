@@ -78,8 +78,8 @@ public class Jeopardy implements ActionListener {
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music
 	 * 
-	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-	 *
+	 * 14. Add buttons so that you have $200, $400, $600, $800 
+	 *  
 	 * [optional] Use the showImage or playSound methods when the user answers a
 	 * question
 	 */
