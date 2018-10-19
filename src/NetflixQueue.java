@@ -5,6 +5,7 @@
 
 
 
+import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.Collections;
 
