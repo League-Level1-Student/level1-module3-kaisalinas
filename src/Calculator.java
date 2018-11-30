@@ -18,7 +18,6 @@ public class Calculator implements ActionListener {
 	JButton button4 = new JButton("divide");
 	JTextField textfield = new JTextField(5);
 	JTextField textfields = new JTextField(5);
-
 	public static void main(String[] args) {
 		Calculator calculator = new Calculator();
 	}
