@@ -43,3 +43,17 @@ if(y>=height){
 y = height;
 }
 }
+class Car{
+int carX;
+int carY;
+int carSize;
+int carSpeed;
+  public void Cars(int carX, int carY, int carSize, int carSpeed){
+  this.carX = carX;
+  this.carY = carY;
+  this.carSize = carSize;
+  this.carSpeed = carSpeed;
+}
+  
+
+}
