@@ -1,8 +1,21 @@
 int x = 200;
 int y = 350;
 Car car = new Car(50, 50, 25, 5);
-Car car2 = new Car(350, 100, 25, 5);
-void setup(){
+Car car2 = new Car(350, 125, 25, 5);
+Car car3 = new Car(50, 200, 25, 5);
+Car car4 = new Car(350, 275, 25, 5);
+boolean intersects(Car car) {
+      if ((x > car.getY() && y < car.getY()+50) && (x > car.getX() && x < car.getX()+car.getSize()))
+      {
+             return true;
+      }
+      else 
+      {
+             return false;
+      }
+
+}
+void setup(){  
 size(400, 400);
 
 
@@ -16,8 +29,28 @@ ellipse(x,y, 35, 35);
 control();
 car.display();
 car2.display();
+car3.display();
+car4.display();
 car.moveLeft();
 car2.moveRight();
+car3.moveLeft();
+car4.moveRight();
+if(intersects(car)){
+x = 200;
+y = 350;
+}
+if(intersects(car2)){
+x = 200;
+y = 350;
+}
+if(intersects(car3)){
+x = 200;
+y = 350;
+}
+if(intersects(car4)){
+x = 200;
+y = 350;
+}
 }
 void keyPressed(){
 if(keyCode == UP){
@@ -65,11 +98,23 @@ public void moveLeft(){
   if(carX <= 0){
   carX = width;
 }
+display();
 }
 public void moveRight(){
 carX+=carSpeed;
 if(carX>=400){
 carX = 0;
 }
+display();
 }
+int getX(){
+return carX;
+}
+int getY(){
+return carY;
+}
+int getSize(){
+return carSize;
+}
+
 }
