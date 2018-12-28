@@ -10,6 +10,7 @@ public class Gridworld {
 		worlds.show();
 		Bug bugs = new Bug();
 		Location place = new Location(100, 100);
+		Bug bug2 = new Bug();
 	}
 
 	public static void main(String[] args) {
