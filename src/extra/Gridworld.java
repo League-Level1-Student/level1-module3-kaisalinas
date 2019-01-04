@@ -20,7 +20,9 @@ public class Gridworld {
 
 	public static void main(String[] args) {
 		Gridworld gridworld = new Gridworld();
-		Location bugPlace = new Location(factory.nextInt(), 0);
+		Location bugPlace = new Location(factory.nextInt(10), factory.nextInt(10));
+		
 	}
+	
 	
 }
