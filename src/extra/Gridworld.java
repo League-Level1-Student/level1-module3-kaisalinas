@@ -1,10 +1,15 @@
 package extra;
 
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
 import info.gridworld.actor.Bug;
 import info.gridworld.grid.Location;
 import info.gridworld.world.World;
 
 public class Gridworld {
+	static Random factory = new Random();
 	Gridworld() {
 		World worlds = new World();
 		worlds.show();
@@ -15,6 +20,7 @@ public class Gridworld {
 
 	public static void main(String[] args) {
 		Gridworld gridworld = new Gridworld();
+		Location bugPlace = new Location(factory.nextInt(), 0);
 	}
-
+	
 }
