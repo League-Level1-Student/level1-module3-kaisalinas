@@ -1,5 +1,6 @@
 package extra;
 
+import java.awt.Color;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -9,20 +10,26 @@ import info.gridworld.grid.Location;
 import info.gridworld.world.World;
 
 public class Gridworld {
-	static Random factory = new Random();
-	Gridworld() {
-		World worlds = new World();
-		worlds.show();
-		Bug bugs = new Bug();
-		Location place = new Location(100, 100);
-		Bug bug2 = new Bug();
-	}
-
+	World world = new World();
+	Bug bug1 = new Bug();
+	Bug bug2 = new Bug();
+	Bug bug3 = new Bug(Color.BLUE);
+	
 	public static void main(String[] args) {
 		Gridworld gridworld = new Gridworld();
-		Location bugPlace = new Location(factory.nextInt(10), factory.nextInt(10));
+		gridworld.drawWorld();
 		
 	}
+		public void drawWorld() {
+			world.show();	
+			Location bugPlace = new Location(factory.nextInt(10), factory.nextInt(10));	
+			Location place = new Location(100, 100);
+			world.add(bugPlace, bug1);
+			bug1.turn();
+		}
+	
+		
+	static Random factory = new Random();
 	
 	
 }
